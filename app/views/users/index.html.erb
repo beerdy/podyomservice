@@ -1,0 +1,51 @@
+<% content_for :index, '-4' %>
+<% content_for :title, Article.find(10).description %>
+
+<section id="content">
+  <a name="callfirm"></a>
+  <div class="full-width-container block-2">
+    <div class="container">
+      <div class="row">
+        <div class="grid_5">
+          <%= render 'form' %>
+        </div>
+        <div class="grid_6 preffix_1">
+          <div>
+            <hader>
+              <h2><span><%= @contact.title %></span></h2>
+            </hader>
+            <%= @contact.description.html_safe %>
+          </div>
+          <div class="grid_3 alpha">
+            <div class="address">
+              <%= @contact.address.html_safe %>
+            </div>
+          </div>
+          <div class="grid_3">
+            <div class="address">
+              <%= @contact.phone.html_safe %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a name="mapfirmslave"></a>
+  <div class="full-width-container block-1">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <header>
+            <h2><span>Геопозиция</span></h2>
+            <a name="mapfirm"></a>
+          </header>
+          <div class="content_map" style="margin-bottom: 100px">            
+            <div class="google-map-api"> 
+            <%= @contact.url.html_safe %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

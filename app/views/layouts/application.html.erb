@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name = "format-detection" content = "telephone=no" />
+  <meta name="yandex-verification" content="7381583dde859766" />
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+
+  <title><%= yield(:title) %></title>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!--[if (gt IE 9)|!(IE)]><!-->
+  <script>
+    $(document).ready(function () {
+      if ($('html').hasClass('desktop')) {
+        new WOW().init();
+      }
+    });
+  </script>
+
+  
+  <!--<![endif]-->
+  <!--[if lt IE 8]>
+  <div style=' clear: both; text-align:center; position: relative;'>
+   <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+     <img src="/assets/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+   </a>
+  </div>
+  <![endif]-->
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+  <![endif]-->
+  </head>
+<body class="index<%= yield(:index) %>">
+<!--==============================header=================================-->
+<header id="header">
+  <div id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <div class="logo"><img src="/assets/logo.png"></div>
+          <%= @head_title.description.html_safe%>
+          <nav>
+            <ul class="sf-menu">
+              <li id='root-path'><a href="/">Главная</a>
+<!--            
+                <ul>
+                  <li><a href="#">Lorem ipsum</a></li>
+                  <li><a href="#">Lorem ipsum</a>
+                    <ul>
+                      <li><a href="#">Lorem ipsum</a></li>
+                      <li><a href="#">Lorem ipsum</a></li>
+                      <li><a href="#">Lorem ipsum</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Lorem ipsum</a></li>
+                </ul>
+-->
+              </li>
+              <li id='sevices-index'><a href="/services">Услуги</a>
+                <ul>
+                  <li><a href="/tarifs">Большой раздел</a>
+                    <ul>
+                      <li><a href="#">Подраздел 100</a>
+                        <ul>
+                          <li><a href="#">Цены</a></li>
+                          <li><a href="#">Специалисты</a></li>
+                          <li><a href="#">Документация</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Подраздел 423</a>
+                        <ul>
+                          <li><a href="#">Цены на услугу</a></li>
+                          <li><a href="#">Специалисты</a></li>
+                          <li><a href="#">Документация</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Подраздел 7777</a>
+                        <ul>
+                          <li><a href="#">Цены на услугу</a></li>
+                          <li><a href="#">Техники</a></li>
+                          <li><a href="#">Документация</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <% @services.each do |service| %>
+                  <li>
+                    <%= link_to service do %>
+                      <span><%= service.title %></span>
+                    <%end%>
+                  </li>
+                  <%end%>
+                </ul>
+              </li>
+              <li id='project-index'><a href="/project/index">Информация</a></li>
+              <li id='about-index'><a href="/about/index">О нас</a></li>
+              <li id='users-index'><a href="/users">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--=======content================================-->
+
+<%= yield %>
+
+<!--=======footer=================================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12 copyright">
+        <h2><span>Подписывайтесь</span></h2>
+        <a href="<%= @social_f.description %>" class="btn bd-ra"><span class="fa fa-facebook"></span></a>
+        <a href="<%= @social_t.description %>" class="btn bd-ra"><span class="fa fa-tumblr"></span></a>
+        <a href="<%= @social_v.description %>" class="btn bd-ra"><span class="fa fa-vk"></span></a>
+        <%= @footer %>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom"><a href="#" rel="nofollow"></div>
+</footer>
+<script>
+  jQuery(function(){
+    jQuery('#camera_wrap').camera({
+      height: '34.58333333333333%',
+      thumbnails: false,
+      pagination: true,
+      fx: 'simpleFade',
+      loader: 'none',
+      hover: false,
+      navigation: false,
+      playPause: false,
+      minHeight: "139px",
+    });
+  });
+</script>
+<script>
+  $(document).ready(function() {
+    $(".owl-carousel").owlCarousel({
+      navigation: true,
+      pagination: false,
+      items : 3,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3],
+      itemsTablet: [750,1],
+      itemsMobile : [479,1],
+      navigationText: false
+    });
+  });
+</script>
+<script>
+  $(document).ready(function() { 
+      if ($('html').hasClass('desktop')) {
+        $.stellar({
+          horizontalScrolling: false,
+          verticalOffset: 20,
+          resposive: true,
+          hideDistantElements: true,
+        });
+
+        $('.sf-menu li').removeClass('current');
+        
+        var location = window.location.pathname;
+
+        switch(location) {
+        case '/':
+          $('#root-path').addClass('current');
+          break;
+        case '/project/index':
+          $('#project-index').addClass('current');
+          break;
+        case '/welcome/index':
+          $('#root-path').addClass('current');
+          break;
+        case '/about/index':
+          $('#about-index').addClass('current');
+          break;
+        case '/services':
+          $('#sevices-index').addClass('current');
+          break;
+        case '/users':
+          $('#users-index').addClass('current');
+          break;
+        }
+        if(/tarifs/i.test(location)){
+          $('#sevices-index').addClass('current');
+        } 
+      }
+    });
+</script>
+</body>
+</html>

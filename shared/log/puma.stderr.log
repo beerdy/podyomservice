@@ -1,0 +1,59 @@
+=== puma startup: 2017-12-06 15:00:08 +0300 ===
+=== puma startup: 2017-12-08 16:17:44 +0300 ===
+=== puma startup: 2017-12-08 16:20:42 +0300 ===
+=== puma startup: 2017-12-08 16:22:48 +0300 ===
+=== puma startup: 2017-12-08 16:24:26 +0300 ===
+=== puma startup: 2017-12-08 16:26:11 +0300 ===
+=== puma startup: 2017-12-08 16:27:36 +0300 ===
+=== puma startup: 2017-12-08 16:38:02 +0300 ===
+=== puma startup: 2017-12-08 16:39:39 +0300 ===
+=== puma startup: 2017-12-08 16:42:44 +0300 ===
+2017-12-08 16:42:52 +0300: Rack app error handling request { GET / }
+#<RuntimeError: Missing `secret_token` and `secret_key_base` for 'production' environment, set these values in `config/secrets.yml`>
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/railties-4.2.6/lib/rails/application.rb:534:in `validate_secret_key_config!'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/railties-4.2.6/lib/rails/application.rb:246:in `env_config'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/railties-4.2.6/lib/rails/engine.rb:514:in `call'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/railties-4.2.6/lib/rails/application.rb:165:in `call'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/puma-3.6.0/lib/puma/configuration.rb:225:in `call'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/puma-3.6.0/lib/puma/server.rb:578:in `handle_request'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/puma-3.6.0/lib/puma/server.rb:415:in `process_client'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/puma-3.6.0/lib/puma/server.rb:275:in `block in run'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/puma-3.6.0/lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+2017-12-08 16:42:52 +0300: Rack app error handling request { GET /favicon.ico }
+#<RuntimeError: Missing `secret_token` and `secret_key_base` for 'production' environment, set these values in `config/secrets.yml`>
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/railties-4.2.6/lib/rails/application.rb:534:in `validate_secret_key_config!'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/railties-4.2.6/lib/rails/application.rb:246:in `env_config'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/railties-4.2.6/lib/rails/engine.rb:514:in `call'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/railties-4.2.6/lib/rails/application.rb:165:in `call'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/puma-3.6.0/lib/puma/configuration.rb:225:in `call'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/puma-3.6.0/lib/puma/server.rb:578:in `handle_request'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/puma-3.6.0/lib/puma/server.rb:415:in `process_client'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/puma-3.6.0/lib/puma/server.rb:275:in `block in run'
+/home/beerdy/.rvm/gems/ruby-2.3.1/gems/puma-3.6.0/lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+=== puma startup: 2017-12-08 16:45:14 +0300 ===
+=== puma startup: 2017-12-08 16:46:46 +0300 ===
+=== puma startup: 2017-12-08 16:47:35 +0300 ===
+=== puma startup: 2017-12-08 16:49:09 +0300 ===
+=== puma startup: 2017-12-08 17:19:35 +0300 ===
+=== puma startup: 2017-12-08 17:23:06 +0300 ===
+=== puma startup: 2017-12-08 17:39:27 +0300 ===
+=== puma startup: 2017-12-08 18:06:32 +0300 ===
+=== puma startup: 2017-12-08 18:09:52 +0300 ===
+=== puma startup: 2017-12-08 18:12:46 +0300 ===
+=== puma startup: 2017-12-08 18:15:52 +0300 ===
+=== puma startup: 2017-12-08 18:17:46 +0300 ===
+=== puma startup: 2017-12-08 18:23:21 +0300 ===
+=== puma startup: 2017-12-08 18:24:10 +0300 ===
+=== puma startup: 2017-12-12 11:04:10 +0300 ===
+=== puma startup: 2017-12-12 11:04:10 +0300 ===
+=== puma startup: 2017-12-12 11:04:10 +0300 ===
+=== puma startup: 2017-12-13 14:37:07 +0300 ===
+=== puma startup: 2017-12-13 18:04:46 +0300 ===
+=== puma startup: 2017-12-14 13:53:42 +0300 ===
+=== puma startup: 2017-12-18 12:57:47 +0300 ===
+=== puma startup: 2017-12-18 16:20:19 +0300 ===
+=== puma startup: 2017-12-18 16:24:04 +0300 ===
+=== puma startup: 2017-12-20 17:01:09 +0300 ===
+=== puma startup: 2018-01-10 11:48:48 +0300 ===

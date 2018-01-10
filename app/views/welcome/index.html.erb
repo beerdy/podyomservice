@@ -1,0 +1,95 @@
+<% content_for :index, '' %>
+<% content_for :title, Article.find(8).description %>
+
+<section id="content">
+  <div class="full-width-container block-1">
+    <div class="camera_container">
+      <div id="camera_wrap">
+        <% @sliders.each_with_index do |slider,i| %>
+        <div class="item" data-src="/assets/index_img_slider-<%=i+1%>.jpg">
+          <div class="camera_caption fadeIn">
+            <h3><%= slider.title %></h3>
+            <p>Свяжитесь с нами</p>
+            <a href="/users#callfirm" class="btn bd-ra"><span class="fa fa-envelope-o"></span></a>
+            <a href="/users#callfirm" class="btn bd-ra"><span class="fa fa-phone"></span></a>
+            <a href="/users#mapfirm" class="btn bd-ra"><span class="fa fa-map-marker"></span></a>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="full-width-container block-2">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <header>
+            <h2><span><%= @dear_user.title %></span></h2>
+          </header>
+          <h4><a href="#"><%= @dear_user.slave %></a></h4>
+          <p><%= @dear_user.description.html_safe %></p>
+          <a href="/users#callfirm" class="btn">Свяжитесь с нами</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="full-width-container block-3 parallax-block" data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <header>
+            <h2><span>Услуги</span></h2>
+          </header>
+        </div>
+        <% @services.each do |service|%>
+        <div class="grid_4">
+          <div class="element"><h3><a href="/services"><%= service.title %></a></h3></div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="full-width-container block-4">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <header>
+            <h2><span>Наши клиенты</span></h2>
+          </header>
+        </div>
+      </div>
+      <div class="row">
+        <div id="owl-carousel" class="owl-carousel">
+          <% @clients.each do |client| %>
+          <div class="grid_4">
+            <div class="">
+              <div class="img_container"><%= image_tag client.image.url if client.image_stored? %></div>
+              <div class="owl-text" style="text-transform: uppercase"><%= client.title %></div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="full-width-container block-5">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <header>
+            <h2><span>Новости</span></h2>
+          </header>
+        </div>
+        <% @news.reverse_each do |new|%>
+        <div class="grid_4">
+          <article>
+            <h3><a href="#"><%= new.title %></a></h3>
+            <p><%= new.description %></p>
+            <%= link_to 'Подробнее', new.url, :class => "btn" %>
+          </article>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+ </section>

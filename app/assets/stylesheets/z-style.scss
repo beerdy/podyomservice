@@ -1,0 +1,17 @@
+.camera_container h3 {
+  text-transform: uppercase;
+}
+
+.sidebar-hide {
+  display: none;
+}
+
+.sidebar .btn {
+  width: 100%;
+  &:hover {
+    cursor: pointer;
+    background-color: #D94D3A;
+    border: 1px solid #D94D3A;
+    color: #fff;
+  }
+}

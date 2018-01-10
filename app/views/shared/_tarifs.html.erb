@@ -1,0 +1,7 @@
+<h5 class="h5__mod"><a href="/tarifs">тарифы - цены</a></h5>
+<ul>
+    <% @tarifs.each do |tarif| %>
+    <li><%= link_to tarif.title, tarif %></li>
+    <% end %>
+</ul>
+<a href="/users#callfirm" class="btn">Написать</a>

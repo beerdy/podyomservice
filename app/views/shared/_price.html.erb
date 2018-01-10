@@ -1,0 +1,22 @@
+<div class='index-5'>
+  <table class="table table-striped tarif">
+    <caption style='text-transform: uppercase; color: #727070'><%= @tarif.title %></caption>
+    <thead class="head" >
+      <tr style="background-color: #D94D3A; color: white;">
+        <th>#</th>
+        <th>ВИД УСЛУГИ</th>
+        <th>СТОИМОСТЬ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tarif.description.each_line.with_index  do |line,index| %>
+      <% name, tarif = line.split ';' %>
+      <tr>
+        <th scope="row"><%= index+1 %></th>
+        <td><%= name  %></td>
+        <td><%= tarif %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

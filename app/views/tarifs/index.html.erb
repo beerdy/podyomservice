@@ -1,0 +1,41 @@
+<% content_for :index, '-3' %>
+<% content_for :title, Article.find(9).description %>
+
+<section id="content">
+  <div class="full-width-container block-1">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <header>
+            <h2><span> Наши услуги</span></h2>
+          </header>
+        </div>
+      </div>
+      <div class="row">
+        <div class="grid_8">
+          <%= render @page_tarif %>
+        </div>
+        <div class="grid_4">
+          <%= render 'shared/tarifs' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="full-width-container block-2">
+    <div class="container">
+      <div class="row">
+          <div class="grid_12">
+            <header>
+              <h2><span>Рекомендации</span></h2>
+            </header>
+          </div>
+        <% @recomendations.each do |recomendation| %>
+        <div class="grid_4">
+          <div class="text_content"><p><%= recomendation.description %></p> </div>
+          <h5><%= recomendation.title %></h5>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+<% content_for :index, '-2' %>
+<% content_for :title, Article.find(7).description %>
+
+<section id="content">
+  <div class="full-width-container block-1">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <header>
+            <h2><span>Наш стиль</span></h2>
+          </header>
+        </div>
+        <div id="touch_gallery">
+          <% @wedos.each.with_index do |wedo,i| %>
+          <div class="grid_4">
+            <div class="img_container"><a href="<%= wedo.image.url %>"><img src="<%= wedo.image.url %>" alt="projects"></a></div>
+            <div  class="project" id="project<%= i %>">
+              <h4><%= wedo.title %></h4>
+              <p>
+              <%= wedo.description.html_safe %><br><br><br></p>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <script type="text/javascript">
+          var maxheight  = 100;
+          var tmpheight = 0;
+
+          for (var i = 0; i < 55; i++) {
+            tmpheight = $('#project'+i).height();
+            if( tmpheight > maxheight ){maxheight = tmpheight}
+          }
+
+          $('.project').css('min-height', maxheight);
+        </script>
+
+      </div>
+    </div>
+  </div>
+  </section>
