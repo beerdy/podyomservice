@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   devise_for :men
   resources :recomendations
   resources :services
@@ -29,7 +30,9 @@ Rails.application.routes.draw do
   
 
   resources :articles
+  
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount Rich::Engine => '/rich', :as => 'rich'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -11,17 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160914161929) do
+ActiveRecord::Schema.define(version: 20180305104358) do
 
   create_table "articles", force: :cascade do |t|
-    t.string   "title"
+    t.string   "title",       limit: 255
     t.text     "description"
-    t.string   "slave"
-    t.string   "image_uid"
-    t.string   "url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "slave",       limit: 255
+    t.string   "image_uid",   limit: 255
+    t.string   "url",         limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
+
+  add_index "articles", ["id"], name: "sqlite_autoindex_articles_1", unique: true
 
   create_table "choseus", force: :cascade do |t|
     t.string   "title"
@@ -89,6 +91,19 @@ ActiveRecord::Schema.define(version: 20160914161929) do
     t.string   "url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "rich_rich_files", force: :cascade do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "rich_file_file_name"
+    t.string   "rich_file_content_type"
+    t.integer  "rich_file_file_size"
+    t.datetime "rich_file_updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.text     "uri_cache"
+    t.string   "simplified_type",        default: "file"
   end
 
   create_table "services", force: :cascade do |t|

@@ -50,11 +50,13 @@ h5 a:hover {
   color: #ffffff;
   background: #666666;
 }
+
 /*========================================================
 										HEADER styles
 =========================================================*/
 #header {
-  padding: 20px 0;
+  padding-top: 10px;
+  padding-bottom: 20px;
   background: #d94d3a;
 }
 .logo {
@@ -62,7 +64,7 @@ h5 a:hover {
 }
 #header img {
   margin-left: -50px;
-  height: 68px;
+  height: 58px;
 }
 #header h1 {
   float: left;
@@ -70,7 +72,7 @@ h5 a:hover {
   color: #ffffff;
 }
 #header h1 a {
-  font: 700 44px/44px 'Open Sans', sans-serif;
+  font: 700 30px/30px 'Open Sans', sans-serif;
   color: #ffffff;
 }
 #header h1 span {
@@ -80,6 +82,7 @@ h5 a:hover {
 #header nav {
   float: right;
 }
+
 @media only screen and (max-width: 767px) {
   #header {
     text-align: center;
@@ -100,7 +103,7 @@ h5 a:hover {
   text-align: center;
   line-height: 20px;
   margin-top: auto;
-  margin-top: 32px;
+  margin-top: 19px;
 }
 .sf-menu > li {
   display: inline-block;
@@ -248,11 +251,15 @@ h5 a:hover {
 }
 /* Stuck menu styles
 ========================================================*/
+#stuck_container {
+  
+}
 .isStuck {
   background: #d94d3a;
   z-index: 9;
-  padding: 0;
+  padding-top: 10px !important;
   border-bottom: 1px solid #d94d3a;
+  height: 68px;
 }
 .isStuck nav {
   margin-top: 17px !important;
