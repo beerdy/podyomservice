@@ -1,0 +1,42 @@
+<% content_for :index, '-3' %>
+<% content_for :title, @service.title %>
+
+<section id="content">
+  <div class="full-width-container block-1">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+          <header>
+            <h2><span> <%=@service.title%></span></h2>
+          </header>
+        </div>
+      </div>
+      <div class="row">
+        <div class="grid_8">
+          <%= @service.description.html_safe %>
+        </div>
+        <div class="grid_4">
+          <%= render 'shared/services' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="full-width-container block-2">
+    <div class="container">
+      <div class="row">
+          <div class="grid_12">
+            <header>
+              <h2><span>Рекомендации</span></h2>
+            </header>
+          </div>
+        <% @recomendations.each do |recomendation| %>
+        <div class="grid_4">
+          <div class="text_content"><p><%= recomendation.description %></p> </div>
+          <h5><%= recomendation.title %></h5>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

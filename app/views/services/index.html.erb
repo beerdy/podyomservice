@@ -17,15 +17,17 @@
         </div>
         <div class="grid_8">
           <% @services.each do |service| %>
-          <article class="clearfix">
-            <div class="grid_4 alpha">
-              <div class="img_container"><img src="<%= service.image.url %>" alt="img"></div>
-            </div>
-            <div class="grid_4">
-              <h5><a href="#"><%= service.title %></a></h5>
-              <p><%= service.description %></p>
-            </div>
-          </article>
+          <a href="/services/<%=service.id%>">
+            <article class="clearfix">
+              <div class="grid_4 alpha">
+                <div class="img_container"><img src="<%= service.image.url %>" alt="img"></div>
+              </div>
+              <div class="grid_4">
+                <h5><%= service.title %></h5>
+                <p><%= truncate strip_tags(service.description), :length => 270 %></p>
+              </div>
+            </article>
+          </a>
           <% end %>
         </div>
         <div class="grid_4 sidebar-pc">

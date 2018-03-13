@@ -1,0 +1,7 @@
+<h5 class="h5__mod"><a href="/services">Перечень услуг</a></h5>
+<ul>
+    <% @services.each do |service| %>
+    <li><%= link_to service.title.mb_chars.upcase, service %></li>
+    <% end %>
+</ul>
+<a href="/users#callfirm" class="btn">Написать</a>
