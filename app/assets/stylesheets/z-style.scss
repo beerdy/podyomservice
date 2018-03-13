@@ -2,10 +2,11 @@
   text-transform: uppercase;
 }
 
+
+
 .sidebar-hide {
   display: none;
 }
-
 .sidebar .btn {
   width: 100%;
   &:hover {
@@ -14,4 +15,21 @@
     border: 1px solid #D94D3A;
     color: #fff;
   }
+}
+
+
+
+.service a {
+  color: #fff;
+}
+.index .block-4 .owl-text {
+  font-size: 26px;
+}
+
+
+
+.img-responsive {
+  display: block;
+  max-width: 100%; 
+  height: auto;
 }
