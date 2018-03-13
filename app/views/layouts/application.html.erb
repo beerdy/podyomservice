@@ -100,7 +100,7 @@
                   <% @services.each do |service| %>
                   <li>
                     <%= link_to service do %>
-                      <span><%= service.title %></span>
+                      <span><%= service.mb_chars.upcase.title %></span>
                     <%end%>
                   </li>
                   <%end%>
