@@ -4,11 +4,20 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def initialize
     super
+    social =  Social.all
+    @articles =  Article.all
     @services = Service.all
-    @head_title = Article.find(1)
-    @social_f = Social.find(3) 
-    @social_t = Social.find(2)
-    @social_v = Social.find(1)
-    @footer   = Article.find(5).description.html_safe
+    
+    @social_f = social[2]
+    @social_t = social[1]
+    @social_v = social[0]
+  end
+  private 
+  def content_read
+    @articles.each do |c|
+      @map = c if c.url == 'map'
+      @head_title = c if c.url == 'head_title'
+      @footer = c.description.html_safe if c.url == 'footer'
+    end
   end
 end
