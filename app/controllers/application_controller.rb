@@ -5,12 +5,15 @@ class ApplicationController < ActionController::Base
   def initialize
     super
     social =  Social.all
-    @articles =  Article.all
+    
     @services = Service.all
     
     @social_f = social[2]
     @social_t = social[1]
     @social_v = social[0]
+
+    @articles =  Article.all
+    content_read
   end
   private 
   def content_read
