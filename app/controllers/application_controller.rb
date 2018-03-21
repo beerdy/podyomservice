@@ -21,6 +21,7 @@ class ApplicationController < ActionController::Base
       @map = c if c.url == 'map'
       @head_title = c if c.url == 'head_title'
       @footer = c.description.html_safe if c.url == 'footer'
+      @allservice = c if c.url == 'allservice'
     end
   end
 end

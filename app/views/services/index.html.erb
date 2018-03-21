@@ -20,7 +20,7 @@
           <a href="/services/<%=service.id%>">
             <article class="clearfix">
               <div class="grid_4 alpha">
-                <div class="img_container"><img src="<%= service.image.url %>" alt="img"></div>
+                <div class="img_container"><%= image_tag service.image.url, alt: service.title if service.image_stored? %></div>
               </div>
               <div class="grid_4">
                 <h5><%= service.title %></h5>
