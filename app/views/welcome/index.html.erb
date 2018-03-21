@@ -8,8 +8,8 @@
         <% @sliders.each_with_index do |slider,i| %>
         <div class="item" data-src="/assets/index_img_slider-<%=i+1%>.jpg">
           <div class="camera_caption fadeIn">
-            <h3><%= slider.title %></h3>
-            <p>Свяжитесь с нами</p>
+            <h3 style="background-color: rgba(66, 62, 62, 0.5);"><%= slider.title.html_safe %></h3>
+            <p><span style="background-color: rgba(66, 62, 62, 0.7) !important;">&nbspСвяжитесь с нами&nbsp</span></p>
             <a href="/users#callfirm" class="btn bd-ra"><span class="fa fa-envelope-o"></span></a>
             <a href="/users#callfirm" class="btn bd-ra"><span class="fa fa-phone"></span></a>
             <a href="/users#mapfirm" class="btn bd-ra"><span class="fa fa-map-marker"></span></a>
