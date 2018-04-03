@@ -45,9 +45,10 @@
             </header>
           </div>
         <% @recomendations.each do |recomendation| %>
-        <div class="grid_4">
+        <div class="grid_4" style="text-align: right !important">
           <div class="text_content"><p><%= recomendation.description %></p> </div>
           <h5><%= recomendation.title %></h5>
+          <i style="font-style: italic !important"><%= recomendation.slave %></i>
         </div>
         <% end %>
       </div>
