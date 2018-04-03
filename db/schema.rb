@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305104358) do
+ActiveRecord::Schema.define(version: 20180403182846) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",       limit: 255
@@ -114,6 +114,7 @@ ActiveRecord::Schema.define(version: 20180305104358) do
     t.string   "url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "sort"
   end
 
   create_table "sliders", force: :cascade do |t|
