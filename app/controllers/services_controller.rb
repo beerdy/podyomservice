@@ -4,14 +4,14 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @recomendations = Recomendation.all
+    set_recomendation
     @tarifs = Tarif.all
   end
 
   # GET /services/1
   # GET /services/1.json
   def show
-    @recomendations = Recomendation.all
+    set_recomendation
   end
 
   # GET /services/new
@@ -72,5 +72,13 @@ class ServicesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
       params.require(:service).permit(:title, :description, :slave, :image_uid, :url)
+    end
+    def set_recomendation
+    @recomendation = []
+    Recomendation.all.each do |s|
+      s.sort = 9999 unless s.sort
+      @recomendation.push s
+    end
+    @recomendation.sort_by!(&:sort)
     end
 end
