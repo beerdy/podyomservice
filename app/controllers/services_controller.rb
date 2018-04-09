@@ -74,11 +74,11 @@ class ServicesController < ApplicationController
       params.require(:service).permit(:title, :description, :slave, :image_uid, :url)
     end
     def set_recomendation
-    @recomendation = []
+    @recomendations = []
     Recomendation.all.each do |s|
       s.sort = 9999 unless s.sort
-      @recomendation.push s
+      @recomendations.push s
     end
-    @recomendation.sort_by!(&:sort)
+    @recomendations.sort_by!(&:sort)
     end
 end
