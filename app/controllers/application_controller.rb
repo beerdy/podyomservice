@@ -32,6 +32,8 @@ class ApplicationController < ActionController::Base
       @head_title = c if c.url == 'head_title'
       @footer = c.description.html_safe if c.url == 'footer'
       @allservice = c if c.url == 'allservice'
+      @head_ = c if c.url == 'head_'
+      @marquee = c if c.url == 'marquee'
     end
   end
 end

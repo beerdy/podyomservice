@@ -5,7 +5,6 @@
   <meta name = "format-detection" content = "telephone=no" />
   <meta name="yandex-verification" content="7381583dde859766" />
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
-
   <title><%= yield(:title) %></title>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -19,7 +18,8 @@
       }
     });
   </script>
-
+  <%= @head_.description.html_safe %>
+  <meta name="yandex-verification" content="550d1fa9069b968a" />
   
   <!--<![endif]-->
   <!--[if lt IE 8]>
