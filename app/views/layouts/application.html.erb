@@ -18,7 +18,7 @@
       }
     });
   </script>
-  <%= @head_.description.html_safe %>
+  <%= @head_.description.html_safe if @head_ %>
   <meta name="yandex-verification" content="550d1fa9069b968a" />
   
   <!--<![endif]-->
@@ -32,28 +32,14 @@
   <!--[if lt IE 9]>
     <link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
   <![endif]-->
-  
-  <style type="text/css">
-    /*-- to compile */  
-    .service a {
-      color: #fff;
-    }
-    .index .block-4 .owl-text {
-      font-size: 26px;
-    }
-    .img-responsive {
-      display: block;
-      max-width: 100%; 
-      height: auto;
-    }
-  </style>
+
   
   </head>
 <body class="index<%= yield(:index) %>">
 
 <!-- The Modal -->
 <!-- For use modal <img class="gallery-img" src="<%=%>" alt="<%=%>" height="auto"> // For use modal-->
-<div id="modalWarpaper" class="modal" style="z-index: 9999">
+<div id="modalWarpaper" class="modal">
   <span class="closeModal">&times;</span>
   <img id="imgWarpaper">
   <div id="captionText"></div>
@@ -62,7 +48,7 @@
 <!--==============================header=================================-->
 <header id="header">
   <div id="stuck_container">
-    <div class="container">
+    <div class="container" id="main-menu">
       <div class="row">
         <div class="grid_12">
           <div class="logo"><img src="/assets/logo.png"></div>
@@ -123,7 +109,7 @@
               </li>
               
               <li id='project-index'><a href="/project/index">Документы</a></li>
-
+              <li id='users-index'><a href="#">Вакансии</a></li>
               <li id='about-index'><a href="/about/index">О нас</a></li>
               <li id='users-index'><a href="/users">Контакты</a></li>
             </ul>

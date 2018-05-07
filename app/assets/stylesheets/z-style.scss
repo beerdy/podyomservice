@@ -1,3 +1,12 @@
+#main-menu, #main-menu .grid_12 {
+  max-width: 1280px !important;
+  .container {
+    width: auto !important;
+  }
+}
+
+
+
 .camera_container h3 {
   text-transform: uppercase;
 }
@@ -32,4 +41,65 @@
   display: block;
   max-width: 100%; 
   height: auto;
+}
+
+
+
+
+.service a {
+  color: #fff;
+}
+.index .block-4 .owl-text {
+  font-size: 26px;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%; 
+  height: auto;
+}
+
+
+
+.camera_caption h3 {
+  background-color: rgba(66, 62, 62, 0.5);
+}
+.camera_caption .slider-title {
+  background-color: rgba(66, 62, 62, 0.7) !important;
+}
+
+.news-block a {
+  color: #D94D3A;
+}
+.news-block a:hover {
+  color: #7d261a;
+}
+.news-block article {
+  text-align: left;
+}
+.news-block h4 {
+  text-align: left !important; 
+  margin-bottom: 0px;
+}
+.news-block .big-link {
+  text-transform: uppercase;
+  font-size: 1.6em;
+}
+.news-block .all-news {
+  padding-top: 2.0em;
+  width: 100%;
+  text-align: right;
+}
+
+.mar {
+  color: #fff; font-size: 1.8em;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 10px 0; opacity:0.9
+}
+
+.carusel-title { 
+  text-transform: uppercase;
+}
+
+
+
+#modalWarpaper {
+  z-index: 9999;
 }

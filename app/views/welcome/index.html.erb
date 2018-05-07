@@ -8,8 +8,8 @@
         <% @sliders.each_with_index do |slider,i| %>
         <div class="item" data-src="/assets/index_img_slider-<%=i+1%>.jpg">
           <div class="camera_caption fadeIn">
-            <h3 style="background-color: rgba(66, 62, 62, 0.5);"><%= slider.title.html_safe %></h3>
-            <p><span style="background-color: rgba(66, 62, 62, 0.7) !important;">&nbspСвяжитесь с нами&nbsp</span></p>
+            <h3><%= slider.title.html_safe %></h3>
+            <p><span class="slider-title">&nbspСвяжитесь с нами&nbsp</span></p>
             <a href="/users#callfirm" class="btn bd-ra"><span class="fa fa-envelope-o"></span></a>
             <a href="/users#callfirm" class="btn bd-ra"><span class="fa fa-phone"></span></a>
             <a href="/users#mapfirm" class="btn bd-ra"><span class="fa fa-map-marker"></span></a>
@@ -19,18 +19,18 @@
       </div>
     </div>
   </div>
-  <marquee behavior="scroll" direction="left" bgcolor="#423E3E" style="color: #fff;">
-    <%=  @marquee.description.upcase %>
+  <marquee behavior="scroll" direction="left" bgcolor="#727070" class="mar">
+    <%=  @marquee.description.mb_chars.upcase.to_s if @marquee %>
   </marquee>
   <div class="full-width-container block-2">
     <div class="container">
       <div class="row">
         <div class="grid_12">
           <header>
-            <h2><span><%= @dear_user.title %></span></h2>
+            <h2><span><%= @head_description.title %></span></h2>
           </header>
-          <h4><a href="#"><%= @dear_user.slave %></a></h4>
-          <p><%= @dear_user.description.html_safe %></p>
+          <h4><a href="#"><%= @head_description.slave %></a></h4>
+          <p><%= @head_description.description.html_safe %></p>
           <a href="/users#callfirm" class="btn">Свяжитесь с нами</a>
         </div>
       </div>
@@ -67,7 +67,7 @@
           <div class="grid_4">
             <div class="">
               <div class="img_container"><%= image_tag client.image.url if client.image_stored? %></div>
-              <div class="owl-text" style="text-transform: uppercase"><%= client.title %></div>
+              <div class="owl-text carusel-title"><%= client.title %></div>
             </div>
           </div>
           <% end %>
@@ -83,15 +83,19 @@
             <h2><span>Новости</span></h2>
           </header>
         </div>
-        <% @news.reverse_each do |new|%>
-        <div class="grid_4">
-          <article>
-            <h3><a href="#"><%= new.title %></a></h3>
-            <p><%= new.description %></p>
-            <%= link_to 'Подробнее', new.url, :class => "btn" %>
-          </article>
+        <div class="grid_12 news-block">
+          <% @feed.each do |n|%>
+            <article>
+              <h4><%= "#{n.pubDate.day<=9?('0'+n.pubDate.day.to_s):n.pubDate.day}.#{n.pubDate.month}.#{n.pubDate.year}" %></h4>
+              <a href="<%=n.link%>" target="_blank"><%= n.title %></a>
+              <p><%= truncate strip_tags(n.description), :length => 270 %> <a href="<%=n.link%>" target="_blank">Читать далее →</a></p>
+              <hr>
+            </article>
+
+          <% end %>
+          <div class="all-news">
+          <a href="<%=@rss.slave%>" class="big-link" target="_blank"><%= @rss.title %></a> </div>
         </div>
-        <% end %>
       </div>
     </div>
   </div>

@@ -34,6 +34,8 @@ class ApplicationController < ActionController::Base
       @allservice = c if c.url == 'allservice'
       @head_ = c if c.url == 'head_'
       @marquee = c if c.url == 'marquee'
+      @rss = c if c.url == 'rss'
+      @head_description = c if c.url == 'head_description'
     end
   end
 end
