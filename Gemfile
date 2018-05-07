@@ -36,8 +36,9 @@ gem 'rails_admin'
 gem 'devise'
 gem 'dragonfly', '~> 1.0.12'
 gem 'puma'
-gem 'mysql2'
+
 gem 'yaml_db'
+gem 'mysql2', '0.3.20'
 
 gem 'ckeditor'
 gem 'rich', github: 'bastiaanterhorst/rich'
